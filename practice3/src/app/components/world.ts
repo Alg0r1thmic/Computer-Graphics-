@@ -46,7 +46,8 @@ class World {
     tree5.translateZ(-1.5);
     tree5.translateX(1);
     tree6.translateX(-6);
-
+    
+    
     loop.updatables.push(controls, windmill);
     scene.add(ambientLight, mainLight, tree, windmill, house,
       tree2,
