@@ -29,22 +29,23 @@ class World {
     loop = new Loop(camera, scene, renderer);
     container.append(renderer.domElement);
 
-     
+
     const controls = createControls(camera, renderer.domElement);
     const { ambientLight, mainLight } = createLights();
     scene.add(new AmbientLight(0x222222))
-    
-    
-    const meshes=createMilkyWayMesh();
-    const sun=new Sun();
-    const earth=new Earth();
-    const mercury=new Mercury();
-    loop.updatables.push(controls, sun,mercury,earth);
+
+
+    const meshes = createMilkyWayMesh();
+    const sun = new Sun();
+    const earth = new Earth();
+    const mercury = new Mercury();
+
+    loop.updatables.push(controls, sun, mercury, earth);
     scene.add(ambientLight, mainLight,
       meshes.milkyWay,
-      sun,mercury,earth
+      sun, mercury, earth
     );
-    scene.fog=new FogExp2(0x000000, 0.00008);
+    scene.fog = new FogExp2(0x000000, 0.00008);
 
     const resizer = new Resizer(container, camera, renderer);
 
